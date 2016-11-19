@@ -30,17 +30,26 @@ app.use('/users', users);
 // The Upload API
 var fileUpload = multer().single('file')
 app.post('/upload', function (req, res) {
-  console.log("Came To Upload File");
+  
   fileUpload(req, res, function (err) {
     
     if (err) {
-      console.log("Uplaod Failed");
-      return
+      res.setHeader('Content-Type', 'application/json');
+      res.send(JSON.stringify({ message: "Upload Failed" }, null, 3));
+      return;
     }
 
-    console.log("Uplaod Succeeded");
+    res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify({ message: "Upload Succeeded" }, null, 3));
   })
 })
+
+// The Download API
+app.get('/download', function(req, res, next){
+  var path = __dirname + '/sampledownload.pdf';
+  res.download(path);
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
