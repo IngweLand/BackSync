@@ -2,10 +2,7 @@
 
 BackSync - Sample Node JS API for Download and Upload
 
-
-App Host -> https://backsync.herokuapp.com/
-
-Upload API -> https://backsync.herokuapp.com/upload
-
-Download API -> https://backsync.herokuapp.com/download
+App Host -> https://backsync.herokuapp.com/<br>
+Upload API -> https://backsync.herokuapp.com/upload<br>
+Download API -> https://backsync.herokuapp.com/download<br>
 
